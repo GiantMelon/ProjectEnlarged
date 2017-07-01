@@ -1,17 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets._2D;
 
 public class ArmRotation : MonoBehaviour {
 
 	public int rotationOffset = 90;
+    public PlatformerCharacter2D playerControl;
 
-	// Update is called once per frame
-	void Update () {
-		// subtracting the position of the player from the mouse position
-		Vector3 difference = Camera.main.ScreenToWorldPoint (Input.mousePosition) - transform.position;
-		difference.Normalize ();		// normalizing the vector. Meaning that all the sum of the vector will be equal to 1
+    public Vector2 dir;
 
-		float rotZ = Mathf.Atan2 (difference.y, difference.x) * Mathf.Rad2Deg;	// find the angle in degrees
-		transform.rotation = Quaternion.Euler (0f, 0f, rotZ + rotationOffset);
-	}
+    void Update()
+    {
+        if (playerControl.m_FacingRight)
+        {
+            Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
+            dir = Input.mousePosition - pos;
+            var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+            if (angle > 90 || angle < -90)
+            {
+                playerControl.Flip();
+            }
+        }
+        else if (!playerControl.m_FacingRight)
+        {
+            Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
+            dir = -Input.mousePosition + pos;
+            var angle = -Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+            if (angle > 90 || angle < -90)
+            {
+                playerControl.Flip();
+            }
+        }
+    }
 }
