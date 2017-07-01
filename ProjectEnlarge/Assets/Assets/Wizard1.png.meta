@@ -1,10 +1,12 @@
 fileFormatVersion: 2
-guid: 4af0716791535c14c9a5c5bd49c3f001
-timeCreated: 1498874765
+guid: 0f2eb448a7d84a54ab5bfdea3bf5090e
+timeCreated: 1498882141
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Wizard 1_0
+    21300000: WizardBody
+    21300002: WizardArm
+    21300004: WizardStaff
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -41,7 +43,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 45
+  spritePixelsToUnits: 25
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -71,16 +73,42 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wizard 1_0
+      name: WizardBody
       rect:
         serializedVersion: 2
-        x: 82
-        y: 527
-        width: 29
-        height: 61
+        x: 3
+        y: 551
+        width: 28
+        height: 47
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 2, y: 0, z: 9, w: 2}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WizardArm
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 560
+        width: 18
+        height: 14
+      alignment: 9
+      pivot: {x: 0.06349966, y: 0.85364205}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: WizardStaff
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 552
+        width: 19
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
